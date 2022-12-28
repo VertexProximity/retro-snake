@@ -58,7 +58,8 @@ class SnakeGame:
     # Bind the arrow keys to the snake's movement
     self.window.bind("<Left>", self.turn_left)
     self.window.bind("<Right>", self.turn_right)
-    self.window.bind("<
+    self.window.bind("<up>", self.up)
+    self.window.bind("<down>", self.down)
 
   def run(self):
     """Starts the game loop."""
@@ -134,10 +135,9 @@ class SnakeGame:
 
       # Add obstacles to the game
       for i in range(self.level):
-        self.obstacles.append(
-  def update_obstacles(self):
-    """Updates the positions of the obstacles."""
-    for i, obstacle in enumerate(self.obstacles):
+        self.obstacles.append()
+    def update_obstacles(self):
+     for i, obstacle in enumerate(self.obstacles):
       # Calculate the new obstacle position
       new_obstacle_position = self.get_new_obstacle_position(obstacle, self.snake_positions[0])
 
@@ -200,10 +200,10 @@ class SnakeGame:
     distance = abs(obstacle[0] - snake_head[0]) + abs(obstacle[1] - snake_head[1])
 
     # Move the obstacle towards the snake if it is more than 2 grid
-      def get_new_obstacle_position(self, obstacle, snake_head):
-    """Calculates the new position of an obstacle based on its current position and the position of the snake's head."""
+    def get_new_obstacle_position(self, obstacle, snake_head):
+   
     # Calculate the distance between the obstacle and the snake's head
-    distance = abs(obstacle[0] - snake_head[0]) + abs(obstacle[1] - snake_head[1])
+     distance = abs(obstacle[0] - snake_head[0]) + abs(obstacle[1] - snake_head[1])
 
     # Move the obstacle towards the snake if it is more than 2 grid spaces away
     if distance > 2:
